@@ -10,5 +10,5 @@ export const ProductList = ({products}) => {
 }
 
 export const ProductItem = ({product}) => {
-    return <li key={product._id}><Link to={`/products/${product._id}`}>{product._id}</Link>: {product.body}</li>
+    return <li key={product._id}><Link to={`/products/${product._id}`}>{product.name}</Link></li>
 }

@@ -28,11 +28,11 @@ const ProductScreen = () => {
     return <>
         <h1>Product Screen</h1>
         <button onClick={handlerDelete(product._id)}>Supprimer</button> <Link to={`/products/${product._id}/edit`}>Mettre à jour</Link>
-        <p>Id: {product._id}</p>
-        <p>Body: {product.body}</p>
-        <p>userId: {product.userId}</p>
-        <p>Créer le: {product.created_at}</p>
-        <p>Dernière mise à jour: {product.updated_at}</p>
+        <p><span className="label">Id</span>: {product._id}</p>
+        <p><span className="label">Nom</span>: {product.name}</p>
+        <p><span className="label">Prix</span>: {product.price} €</p>
+        <p><span className="label">Créer le</span>: {product.created_at}</p>
+        <p><span className="label">Dernière mise à jour</span>: {product.updated_at}</p>
         <Link to='/products'>Retour à la liste</Link>
     </>
 }

@@ -1,3 +1,8 @@
 body {
     background: #93c09e;
 }
+
+.label {
+    font-weight: bold;
+    text-decoration: dashed;
+}
