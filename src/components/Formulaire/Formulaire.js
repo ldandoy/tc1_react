@@ -1,20 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import styles from './Formulaire.module.css'
 
 export const Formulaire = () => {
-    /*
-    const [login, setLogin] = useState('');
-    const [mdp, setMdp] = useState('')
+    const history = useHistory()
 
-    const handlerOnchangeLogin = (e) => {
-        setLogin(e.target.value)
+    const handlerOnSubmit= (e) => {
+        e.preventDefault()
+        history.push('/products')
     }
-
-    const handlerOnchangeMdp = (e) => {
-        setMdp(e.target.value)
-    }
-    */
 
     const [form, setForm] = useState({
         login: '',
@@ -31,7 +26,7 @@ export const Formulaire = () => {
         <h1 className={styles.title}>
             Le formulaire !
         </h1>
-        <form>
+        <form onSubmit={handlerOnSubmit}>
             <div>
                 <label className={styles.label} htmlFor="login">Login</label>
                 <input id="login" value={form.login} placeholder="Entrez votre login" onChange={handlerOnchange} type="text" name="login" />
